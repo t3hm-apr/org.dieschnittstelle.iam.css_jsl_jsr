@@ -1,0 +1,115 @@
+html, body {
+    background-color: red;
+    margin: 0px;
+    font-family: "Avenir Medium", sans-serif;
+    color: white;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+/* header and its parts */
+
+header {
+    background-color: rgb(60,60,60);
+    height: 50px;
+    width: 100%;
+    max-width: 100%;
+    line-height: 50px;
+}
+
+header h2 {
+    margin: 0px;
+    font-weight: normal;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.mainmenu, .new-item, .edit-item {
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    display: inline-block;
+    background-origin: content-box;
+    background-position: center center;
+    filter: invert(90%);
+    -webkit-filter: invert(90%);
+}
+
+.mainmenu {
+    background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+    float: left;
+}
+
+.new-item {
+    background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+    float: right;
+}
+
+.edit-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-image: url("./img/glyphicons/png/glyphicons-31-pencil.png");
+    float: right;
+}
+
+/* main part of the view */
+
+.maincontent {
+    width: 100%;
+    max-width: 100%;
+    background-color: rgb(45,45,45);
+    height: calc(100% - (50px));
+    height: -webkit-calc(100% - 50px);
+    max-height: calc(100% - 50px);
+    max-height: -webkit-calc(100% - 50px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* list and list items */
+
+ul {
+    margin: 0px;
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    height: 60px;
+    line-height: 60px;
+    font-size: 20pt;
+    padding-left: 10px;
+    border-bottom: 1px solid rgb(120,120,120);
+}
+
+/* toast */
+/* dealing with the toast fading in and out using a css transition on opacity, text color and background */
+
+.toast {
+    width: 60%;
+    position: fixed;
+    text-align: center;
+    bottom: 15%;
+    left: 20%;
+    background-color: white;
+    opacity: 0.0;
+    color: gray;
+    /*-moz-transition:opacity 3s, background-color 3s, color 3s;	*/
+    transition: opacity 0.5s, background-color 0.5s, color 0.5s;
+    transition-delay: 0.5s;
+}
+
+.toast.active {
+    background-color: gray;
+    color: white;
+    /*-moz-transition:opacity 3s, background-color 3s, color 3s;	*/
+    /*transition: opacity 10s, background-color 10s, color 10s;*/
+    opacity: 1.0;
+    /*transition-delay: 0s;*/
+    transition: opacity 1s, background-color 1s, color 1s;
+}
+
