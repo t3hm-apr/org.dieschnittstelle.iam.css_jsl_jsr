@@ -6,7 +6,7 @@ var listenersSet;
 // a function that reacts to the selection of a list item
 function onListItemSelected(event) {
     // check in which phase we are
-    if (event.eventPhase == 3) {
+    if (event.eventPhase == Event.BUBBLING_PHASE) {
         // a helper function that looks up the target li element of the event
         function lookupEventTarget(el) {
             if (el.tagName.toLowerCase() == "li") {
@@ -41,14 +41,20 @@ function toggleListeners() {
     var ul = document.getElementsByTagName("ul")[0];
     var newItem = document.querySelector(".new-item");
 
+    document.getElementsByTagName("body")[0].classList.toggle("listeners-active");
+
     if (listenersSet) {
         newItem.removeEventListener("click",loadNewItems);
+        newItem.setAttribute("disabled","disabled");
+        console.log("newItem.disabled: " + newItem.disabled);
         ul.removeEventListener("click", onListItemSelected);
         showToast("event listeners have been removed");
         listenersSet = false;
     }
     else {
         newItem.addEventListener("click",loadNewItems);
+        newItem.removeAttribute("disabled");
+        console.log("newItem.disabled: " + newItem.disabled);
         ul.addEventListener("click", onListItemSelected);
         showToast("event listeners have been set");
         listenersSet = true;
@@ -57,20 +63,34 @@ function toggleListeners() {
 
 /* show a toast and use a listener for transitionend for fading out */
 function showToast(msg) {
-    console.log("showToast(): using transitionend listener");
     var toast = document.querySelector(".toast");
-    toast.textContent =  msg;
-    toast.classList.toggle("active");
-    /* initiate fading out the toast when the transition has finished nach Abschluss der Transition */
-    toast.addEventListener("transitionend", fadeoutToast);
+    if (toast.classList.contains("active")) {
+        console.info("will not show toast msg " + msg + ". Toast is currently active, and no toast buffering has been implemented so far...");
+    }
+    else {
+        console.log("showToast(): " + msg);
+        toast.textContent = msg;
+        /* cleanup */
+        toast.removeEventListener("transitionend",finaliseToast);
+        /* initiate fading out the toast when the transition has finished nach Abschluss der Transition */
+        toast.addEventListener("transitionend", fadeoutToast);
+        toast.classList.add("shown");
+        toast.classList.add("active");
+    }
 }
 
+function finaliseToast(event) {
+    var toast = event.target;
+    console.log("finaliseToast(): " + toast.textContent);
+    toast.classList.remove("active");
+}
 
 /* trigger fading out the toast and remove the event listener  */
-function fadeoutToast() {
-    console.log("fadeoutToast()");
-    var toast = document.querySelector(".toast");
-    toast.classList.toggle("active");
+function fadeoutToast(event) {
+    var toast = event.target;
+    console.log("fadeoutToast(): " + toast.textContent);
     /* remove tranistionend listener */
+    toast.addEventListener("transitionend", finaliseToast);
     toast.removeEventListener("transitionend", fadeoutToast);
+    toast.classList.remove("shown");
 }

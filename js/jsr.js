@@ -25,6 +25,7 @@ function createListElementForContentItem(item) {
     var div = document.createElement("div");
     li.appendChild(div);
     div.classList.add("edit-item");
+    div.classList.add("button");
 
     // add the element to the list
     document.getElementsByTagName("ul")[0].appendChild(li);
