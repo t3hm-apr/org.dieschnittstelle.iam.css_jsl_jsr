@@ -35,6 +35,27 @@ function onListItemSelected(event) {
     }
 }
 
+function showInfo(event) {
+    var element = event.target;
+    while(element.tagName.toLowerCase() != "li") {
+        console.log(element.tagName);
+        element = element.parentNode;
+    }
+
+    // get the url
+    var url = element.getElementsByClassName("list_item_url")[0].textContent.trim();
+    // get the title
+    var title = element.getElementsByClassName("list_item_title")[0].textContent.trim();
+
+    if (event.target.classList.contains("dots")) {
+        alert('Title: ' + title + ", Url: " + url);
+    }
+    else {
+        alert('Title: ' + title);
+    }
+    event.stopPropagation();
+}
+
 function toggle(origins) {
     console.log("toggle start");
     for (var i = 0; i < origins.length; i++) {
