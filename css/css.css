@@ -1,19 +1,31 @@
 html, body {
-    background-color: limegreen;
-    margin: 0px;
-    font-family: "Avenir Medium", sans-serif;
+    background-color: white;
     color: black;
-    width: 100%;
-    max-width: 100%;
+    font-family: "Avenir Medium", sans-serif;
     height: 100%;
+    margin: 0px;
     max-height: 100%;
+    max-width: 100%;
+    width: 100%;
 }
 
 .blist {
 
 }
+
 .btiles {
 
+}
+
+.toggle-element {
+
+    opacity: 1.0;
+    transition: opacity 1s;
+}
+
+.faded {
+    opacity: 0.0;
+    transition: opacity 2s;
 }
 
 /* block text selection */
@@ -28,42 +40,46 @@ html, body {
 
 header {
     background-color: white;
+    filter: drop-shadow(0px 5px 0px grey);
+    -webkit-filter: drop-shadow(0px 5px 0px grey);
     height: 50px;
-    width: 100%;
+    line-height: 50px;
     max-width: 100%;
     min-width: 280px;
-    line-height: 50px;
-    filter: drop-shadow(0px 5px 0px grey);
-    -webkit-filter:drop-shadow(0px 5px 0px grey);
+    width: 100%;
 }
 
 footer {
     background-color: white;
     border-top: 2px solid orange;
     height: 50px;
-    width: 100%;
-    max-width: 100%;
     line-height: 50px;
+    max-width: 100%;
+    width: 100%;
 }
 
 header h2 {
-    margin: 0px;
-    font-weight: normal;
     display: inline-block;
+    font-weight: normal;
+    margin: 0px;
     text-transform: uppercase;
 }
 
-.button {
-    height: 30px;
-    width: 30px;
-    padding: 10px;
+.button_30_30 {
+    background-origin: content-box;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: 30px 30px;
     display: inline-block;
-    background-origin: content-box;
-    background-position: center center;
     filter: invert(60%);
     -webkit-filter: invert(60%);
+    height: 30px;
+    padding: 10px;
+    width: 30px;
+}
+
+.button {
+
 }
 
 .listeners-active .toggle-listeners {
@@ -82,14 +98,17 @@ header h2 {
     background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
     float: left;
 }
+
 .blist .tile {
     background-image: url("./img/glyphicons/png/glyphicons-157-show-thumbnails.png");
     float: right;
 }
+
 .btiles .tile {
     background-image: url("./img/glyphicons/png/glyphicons-115-list.png");
     float: right;
 }
+
 .new-item {
     background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
     float: right;
@@ -97,33 +116,35 @@ header h2 {
 
 .blist .list_item_content .dots {
     background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
-    float:right;
-    height: 20px;
-    width: 6px;
     background-size: 6px 20px;
     filter: invert(60%);
     -webkit-filter: invert(60%);
-}
-.btiles .dots {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
-    float:right;
+    float: right;
     height: 20px;
     width: 6px;
+}
+
+.btiles .dots {
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
     background-size: 6px 20px;
+    bottom: 10px;
     filter: invert(90%);
     -webkit-filter: invert(90%);
+    float: right;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    width: 6px;
 }
+
 .play {
     background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
-    width: 16px;
     background-repeat: no-repeat;
-    padding-left: 20px;
     background-size: 16px 18px;
     filter: invert(60%);
     -webkit-filter: invert(60%);
+    padding-left: 20px;
+    width: 16px;
 }
 
 .login {
@@ -137,105 +158,109 @@ header h2 {
 }
 
 .edit-item {
-    padding-top: 15px;
-    padding-bottom: 15px;
     background-image: url("./img/glyphicons/png/glyphicons-31-pencil.png");
     float: right;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 /* main part of the view */
 
 .maincontent {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
     background-color: lightgrey;
     height: calc(100% - (102px));
     height: -webkit-calc(100% - 102px);
     max-height: calc(100% - 102px);
     max-height: -webkit-calc(100% - 102px);
-    overflow-y: scroll;
+    max-width: 100%;
     overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    width: 100%;
 }
 
 /* list and list items */
 
 .container {
 }
+
 .blist .list_item_content {
-    text-align: left;
-    margin-left:110px;
-    color:  gray;
+    color: gray;
     font-size: 18px;
+    margin-left: 110px;
+    text-align: left;
 }
 
 .btiles .list_item_content {
     display: none;
 }
-.blist .list_item_image {
-    height:100px;
-    width:100px;
-    float:left;
 
-    background-repeat: no-repeat;
-    background-size: 100px 100px;
-    display: inline-block;
+.blist .list_item_image {
     background-origin: content-box;
     background-position: center center;
-}
-.btiles .list_item_image {
-    position: relative;
-    height:100px;
-    width:100px;
+    background-repeat: no-repeat;
 
+    background-size: 100px 100px;
+    display: inline-block;
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.btiles .list_item_image {
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: 100px 100px;
-    background-position: center center;
+
+    height: 100px;
+    position: relative;
+    width: 100px;
 }
 
 .blist ul {
-    margin: 0px;
-    margin-top: 30px;
-    list-style: none;
-    text-align: center;
-    padding: 0px;
     background-color: white;
     height: calc(100% - (30px));
     height: -webkit-calc(100% - 30px);
+    list-style: none;
+    margin: 0px;
+    margin-top: 30px;
     max-height: calc(100% - 30px);
     max-height: -webkit-calc(100% - 30px);
+    padding: 0px;
+    text-align: center;
 }
+
 .btiles ul {
-    margin: 0px;
-    margin-top: 30px;
-    list-style: none;
-    text-align: center;
-    padding: 0px;
     background-color: white;
     height: calc(100% - (30px));
     height: -webkit-calc(100% - 30px);
+    list-style: none;
+    margin: 0px;
+    margin-top: 30px;
     max-height: calc(100% - 30px);
     max-height: -webkit-calc(100% - 30px);
+    padding: 0px;
+    text-align: center;
 }
 
 .blist li {
     /*height: 120px;*/
     /*line-height: 120px;*/
-    min-height: 120px;
-    font-size: 20pt;
-    padding: 10px;
     background-color: white;
-    border-bottom: 1px solid rgb(120,120,120);
+    border-bottom: 1px solid rgb(120, 120, 120);
+    font-size: 20pt;
+    min-height: 120px;
+    padding: 10px;
 }
 
 .btiles li {
     /*min-height: 120px;*/
     /*padding-left: 10px;*/
-    margin: 10px;
     float: left;
+    margin: 10px;
+    border-bottom: none;
     /*display: inline;*/
 }
-
 
 /* disabled elements */
 [disabled] {
@@ -243,38 +268,44 @@ header h2 {
 }
 
 /* selected elements */
-.button:active  {
+.button:active, .button_30_30:active {
     opacity: 0.1;
 }
 
 .image {
-    height: 100px;
-    width: 100px;
+    background-origin: content-box;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: 100px 100px;
     display: inline-block;
-    background-origin: content-box;
-    background-position: center center;
+    height: 100px;
+    width: 100px;
 }
 
 .list_1 {
     background-image: url("./img/list_01.jpg");
 }
+
 .list_2 {
     background-image: url("./img/list_02.jpg");
 }
+
 .list_3 {
     background-image: url("./img/list_03.jpg");
 }
+
 .list_4 {
     background-image: url("./img/list_04.jpg");
 }
+
 .list_5 {
     background-image: url("./img/list_05.jpg");
 }
+
 .list_6 {
     background-image: url("./img/list_06.jpg");
 }
+
 .list_7 {
     background-image: url("./img/list_07.jpg");
 }
@@ -282,15 +313,15 @@ header h2 {
 /* toast */
 
 .toast {
-    width: 60%;
-    position: fixed;
-    text-align: center;
+    background-color: white;
     bottom: 15%;
     left: 20%;
-    background-color: white;
     opacity: 0.0;
+    position: fixed;
+    text-align: center;
     transition: opacity 0.5s, background-color 0.5s;
     transition-delay: 0.5s;
+    width: 60%;
 }
 
 .toast.shown {
@@ -302,8 +333,8 @@ header h2 {
 }
 
 .list_item_title {
-    color:black;
+    color: black;
     font-size: 20px;
-    margin-top:25px;
     margin-bottom: 10px;
+    margin-top: 25px;
 }

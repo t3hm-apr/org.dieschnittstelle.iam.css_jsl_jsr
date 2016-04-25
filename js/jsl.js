@@ -3,6 +3,8 @@
  */
 var listenersSet;
 
+var buttonEnabled = true;
+
 // a function that reacts to the selection of a list item
 function onListItemSelected(event) {
     // check in which phase we are
@@ -30,6 +32,44 @@ function onListItemSelected(event) {
         else {
             showToast("list item target of event could not be determined!");
         }
+    }
+}
+
+function toggle(origins) {
+    console.log("toggle start");
+    for (var i = 0; i < origins.length; i++) {
+        origins[i].classList.toggle("faded");
+    }
+    console.log("toggle end");
+}
+function setButtonEnabled(toggleButton) {
+    // if (!buttonEnabled) {
+    //     toggleButton.disabled = true;
+    // } else {
+    //     toggleButton.removeAttribute("disabled");
+    // }
+    //workaround ;)
+    console.log("setting button enabled to " + buttonEnabled);
+    buttonEnabled = !buttonEnabled;
+}
+function toggleView() {
+
+    if (buttonEnabled) {
+        var toggleButton = document.getElementById("toggleButton");
+        setButtonEnabled(toggleButton);
+
+        console.log("toggleView")
+        var origins = document.querySelectorAll(".toggle-element");
+        toggle(origins);
+        window.setTimeout(function () {
+            console.log("timeout");
+            var body = document.querySelector(".blist");
+            body.classList.toggle("btiles");
+            toggle(origins);
+            window.setTimeout(function() {
+                setButtonEnabled(toggleButton);
+            },1000);
+        }, 2000);
     }
 }
 
