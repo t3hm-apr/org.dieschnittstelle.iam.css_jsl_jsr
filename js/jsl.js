@@ -40,18 +40,22 @@ function showInfo(event) {
     while(element.tagName.toLowerCase() != "li") {
         console.log(element.tagName);
         element = element.parentNode;
+        if(element.tagName.toLowerCase() == "body") {
+            break;
+        }
     }
 
-    // get the url
-    var url = element.getElementsByClassName("list_item_url")[0].textContent.trim();
-    // get the title
-    var title = element.getElementsByClassName("list_item_title")[0].textContent.trim();
+    if (element.tagName.toLowerCase() == "li") { // get the url
+        var url = element.getElementsByClassName("list_item_url")[0].textContent.trim();
+        // get the title
+        var title = element.getElementsByClassName("list_item_title")[0].textContent.trim();
 
-    if (event.target.classList.contains("dots")) {
-        alert('Title: ' + title + ", Url: " + url);
-    }
-    else {
-        alert('Title: ' + title);
+        if (event.target.classList.contains("dots")) {
+            alert('Title: ' + title + ", Url: " + url);
+        }
+        else {
+            alert('Title: ' + title);
+        }
     }
     event.stopPropagation();
 }
