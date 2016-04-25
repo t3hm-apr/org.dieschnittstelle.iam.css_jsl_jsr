@@ -199,6 +199,18 @@ li:active, .button:active  {
 .list_3 {
     background-image: url("./img/list_03.jpg");
 }
+.list_4 {
+    background-image: url("./img/list_04.jpg");
+}
+.list_5 {
+    background-image: url("./img/list_05.jpg");
+}
+.list_6 {
+    background-image: url("./img/list_06.jpg");
+}
+.list_7 {
+    background-image: url("./img/list_07.jpg");
+}
 
 /* toast */
 
