@@ -2,7 +2,7 @@ html, body {
     background-color: limegreen;
     margin: 0px;
     font-family: "Avenir Medium", sans-serif;
-    color: white;
+    color: black;
     width: 100%;
     max-width: 100%;
     height: 100%;
@@ -20,7 +20,18 @@ html, body {
 /* header and its parts */
 
 header {
-    background-color: rgb(60,60,60);
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    max-width: 100%;
+    line-height: 50px;
+    filter: drop-shadow(0px 5px 0px grey);
+    -webkit-filter:drop-shadow(0px 5px 0px grey);
+}
+
+footer {
+    background-color: white;
+    border-top: 2px solid orange;
     height: 50px;
     width: 100%;
     max-width: 100%;
@@ -43,8 +54,8 @@ header h2 {
     display: inline-block;
     background-origin: content-box;
     background-position: center center;
-    filter: invert(90%);
-    -webkit-filter: invert(90%);
+    filter: invert(60%);
+    -webkit-filter: invert(60%);
 }
 
 .listeners-active .toggle-listeners {
@@ -59,8 +70,45 @@ header h2 {
     float: left;
 }
 
+.burger {
+    background-image: url("./img/glyphicons/png/glyphicons-517-menu-hamburger.png");
+    float: left;
+}
+.tile {
+    background-image: url("./img/glyphicons/png/glyphicons-157-show-thumbnails.png");
+    float: right;
+}
 .new-item {
     background-image: url("./img/glyphicons/png/glyphicons-433-plus.png");
+    float: right;
+}
+
+.dots {
+    background-image: url("./img/glyphicons/png/glyphicons-518-option-vertical.png");
+    float:right;
+    height: 20px;
+    width: 6px;
+    background-size: 6px 20px;
+    filter: invert(60%);
+    -webkit-filter: invert(60%);
+}
+.play {
+    background-image: url("./img/glyphicons/png/glyphicons-174-play.png");
+    width: 16px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    background-size: 16px 18px;
+    filter: invert(60%);
+    -webkit-filter: invert(60%);
+}
+
+.login {
+    background-image: url("./img/glyphicons/png/glyphicons-387-log-in.png");
+    float: left;
+}
+
+.refresh {
+    background-image: url("./img/glyphicons/png/glyphicons-82-refresh.png");
     float: right;
 }
 
@@ -76,16 +124,35 @@ header h2 {
 .maincontent {
     width: 100%;
     max-width: 100%;
-    background-color: rgb(45,45,45);
-    height: calc(100% - (50px));
-    height: -webkit-calc(100% - 50px);
-    max-height: calc(100% - 50px);
-    max-height: -webkit-calc(100% - 50px);
+    background-color: lightgrey;
+    height: calc(100% - (102px));
+    height: -webkit-calc(100% - 102px);
+    max-height: calc(100% - 102px);
+    max-height: -webkit-calc(100% - 102px);
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 /* list and list items */
+
+.container {
+}
+.list_item_content {
+    margin-left:110px;
+    color:  gray;
+    font-size: 18px;
+}
+.list_item_image {
+    height:100px;
+    width:100px;
+    float:left;
+
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    display: inline-block;
+    background-origin: content-box;
+    background-position: center center;
+}
 
 ul {
     margin: 0px;
@@ -94,10 +161,12 @@ ul {
 }
 
 li {
-    height: 60px;
-    line-height: 60px;
+    /*height: 120px;*/
+    /*line-height: 120px;*/
+    min-height: 120px;
     font-size: 20pt;
-    padding-left: 10px;
+    padding: 10px;
+    background-color: white;
     border-bottom: 1px solid rgb(120,120,120);
 }
 
@@ -111,6 +180,25 @@ li:active, .button:active  {
     opacity: 0.1;
 }
 
+.image {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    display: inline-block;
+    background-origin: content-box;
+    background-position: center center;
+}
+
+.list_1 {
+    background-image: url("./img/list_01.jpg");
+}
+.list_2 {
+    background-image: url("./img/list_02.jpg");
+}
+.list_3 {
+    background-image: url("./img/list_03.jpg");
+}
 
 /* toast */
 
@@ -134,3 +222,9 @@ li:active, .button:active  {
     transition: opacity 1s, background-color 1s;
 }
 
+.list_item_title {
+    color:black;
+    font-size: 20px;
+    margin-top:25px;
+    margin-bottom: 10px;
+}
