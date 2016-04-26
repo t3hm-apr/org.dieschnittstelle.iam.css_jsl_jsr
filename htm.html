@@ -13,143 +13,19 @@
     <script type="application/javascript" src="js/jsr.js"></script>
     <!-- add the "library" script wrapping XMLHttpRequest -->
     <script type="application/javascript" src="js/lib/xhr.js"></script>
+    <script type="application/javascript" src="js/init.js"></script>
 </head>
 <body class="blist">
 <header class="toggle-element">
     <div class="button_30_30 burger"></div>
     <h2>Medien</h2>
-    <div class="button_30_30 tile" onclick="toggleView()" id="toggleButton"></div>
+    <div class="button_30_30 tile" id="toggleButton"></div>
     <div class="button_30_30 new-item"></div>
 </header>
 <div class="toggle-element maincontent">
 
     <ul style="margin-top: 30px" onclick="showInfo(event)">
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_1"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">22.02.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M1
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_2"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">23.02.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M2
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_3"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">24.02.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M3
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_4"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">28.02.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M4
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_5"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">01.03.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M5
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_6"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">02.03.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M6
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="container">
-                <div class="list_item_image  list_7"><div class="button dots"></div></div>
-                <div class="list_item_content">
-                    <div>
-                        <div style="float:right">04.03.2016</div>
-                        <div class="list_item_url">lorempixel.com</div>
-                    </div>
-                    <div class="list_item_title">
-                        M7
-                    </div>
-                    <div>
-                        <div class="button dots"></div>
-                        <div class="button play">0</div>
-                    </div>
-                </div>
-            </div>
-        </li>
+
 
     </ul>
 </div>
@@ -158,7 +34,7 @@
 </div>
 <footer>
     <div class="button_30_30 login"></div>
-    <div class="button_30_30 refresh"></div>
+    <div class="button_30_30 refresh" id="refresh"></div>
 </footer>
 </body>
 </html>
