@@ -1,6 +1,9 @@
 /**
  * Created by master on 01.03.16.
  */
+
+var names = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.".split(" ");
+
 function refresh() {
 
     var ulNode = document.getElementsByTagName("ul")[0];
@@ -9,6 +12,38 @@ function refresh() {
     }
 
     loadNewItems();
+}
+
+function getRandomName() {
+    var idx = Math.floor((Math.random() * names.length) + 1);
+    return names[idx];
+}
+function addRandomItem() {
+
+    var name = getRandomName();
+
+    var date = new Date();
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var month = monthIndex < 10 ? "0" + monthIndex : "" + monthIndex;
+    var year = date.getFullYear();
+
+    var dateString = day + "." + month + "." + year;
+
+    var numOfTags = Math.floor((Math.random() * 10) + 1);
+
+    createListElementForContentItem({
+        "name": name,
+        "owner": "lorempixel,com",
+        "added": dateString,
+        "numOfTags": numOfTags,
+        "src": "http://lorempixel.com/100/100"
+    });
+}
+
+function deleteItem(item) {
+    var ulNode = document.getElementsByTagName("ul")[0];
+    ulNode.removeChild(item);
 }
 
 function loadNewItems() {
@@ -93,7 +128,7 @@ function appendDivWithClassesAndContent(element, classes, content) {
                 div.classList.add(classes[i]);
             }
         }
-        if(content) {
+        if(content || content === 0) {
             div.textContent = content;
         }
 

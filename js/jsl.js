@@ -35,7 +35,7 @@ function onListItemSelected(event) {
     }
 }
 
-function showInfo(event) {
+function handleListItemClick(event) {
     var element = event.target;
     while(element.tagName.toLowerCase() != "li") {
         console.log(element.tagName);
@@ -51,7 +51,7 @@ function showInfo(event) {
         var title = element.getElementsByClassName("list_item_title")[0].textContent.trim();
 
         if (event.target.classList.contains("dots")) {
-            alert('Title: ' + title + ", Url: " + url);
+            deleteItem(element);
         }
         else {
             alert('Title: ' + title);

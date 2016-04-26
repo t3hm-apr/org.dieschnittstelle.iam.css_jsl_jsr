@@ -15,4 +15,9 @@ window.onload = function() {
     refreshButton.onclick = function () {
         refresh();
     };
+
+    var addButton = document.getElementById("addItem");
+    addButton.onclick = function () {
+        addRandomItem();
+    };
 };
