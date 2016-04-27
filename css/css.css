@@ -239,12 +239,14 @@ header h2 {
     height: calc(100% - (30px));
     height: -webkit-calc(100% - 30px);
     list-style: none;
+    width: 100%;
     margin: 0px;
     margin-top: 30px;
     max-height: calc(100% - 30px);
     max-height: -webkit-calc(100% - 30px);
     padding: 0px;
     text-align: center;
+    display: table;
 }
 
 .blist li {
