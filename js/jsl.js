@@ -1,5 +1,6 @@
 /**
  * Created by master on 01.03.16.
+ * @author jk, Alexander Preugschat, Benjamin Schmidt
  */
 var listenersSet;
 

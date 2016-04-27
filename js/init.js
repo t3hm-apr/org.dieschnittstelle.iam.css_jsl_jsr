@@ -1,5 +1,5 @@
 /**
- * Created by alexander.preugschat on 26.04.16.
+ * @author Alexander Preugschat
  */
 window.onload = function() {
     console.log('init');
